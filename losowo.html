@@ -5,8 +5,6 @@
 <body>
 
 <div class="standard">
-<h1>Lsowo</h1>
-Losowo tworzy wszystkie podstwowe 
 
 <div>
 <h3>Dane badacza</h3>
@@ -15,7 +13,7 @@ Losowo tworzy wszystkie podstwowe
 	<li>Nazwisko</li>
 	<li>Wiek</li>
 	<li>Płeć</li>
-	<li>Zawód</li>
+	<li id="zawod"></li>
 	<li>Miejsce urodzenia</li>
 	<li>Miejsce zamieszkania</li>
 </ul>
@@ -73,7 +71,6 @@ Losowo tworzy wszystkie podstwowe
 </ul>
 </div>
 
-
 <h3>Historia badacza</h3>
 <ul>Opis postaci
 	<li id="op1"></li>
@@ -120,7 +117,6 @@ Losowo tworzy wszystkie podstwowe
 </div>
 
 <script type="text/javascript" >
-
 
 var losowoCechy1 = [];
 while (losowoCechy1.length < 6){
@@ -189,6 +185,37 @@ var opis = [ "Wyrazisty", "Przystojny", "Niezgrabny", "Śliczny", "Czarujący", 
 document.getElementById("op1").innerHTML=opis[losowoOp[0]];
 document.getElementById("op2").innerHTML=opis[losowoOp[1]];
 document.getElementById("op3").innerHTML=opis[losowoOp[2]];
+
+
+var losowoZawod = [];
+var losZawod = Math.floor(Math.random() * 27);
+if (losowoZawod.indexOf(losZawod) === -1) losowoZawod.push(losZawod); 
+	
+var zawod = [ "Antykwariusz", "Artysta", "Artysta estradowy", "Atleta", "Bibliotekarz", "Bogaty hobbysta", "Człowiek plemienny", "Detektyw policyjny", "Duchowny", "Dziennikarz", "Fanatyk", "Farmer", "Inżynier", "Lekarz", "Misjonarz", "Muzyk", "Oficer policji", "Oficer wojskowy", "Parapsycholog", "Pilot", "Pisarz", "Prawnik", "Profesor", "Prywatny detektyw", "Przestępca", "Włóczęga", "Żołnierz" ]
+document.getElementById("zawod").innerHTML="Zawód: " + zawod[losowoZawod[0]];
+punkty = losowoCechy2[2] * 4;
+var losowoPunkty = [];
+while(losowoOp.length < 12){
+    var losOp = Math.floor(Math.random() * 70);
+    if(losowoOp.indexOf(losOp) === -1) losowoOp.push(losOp);
+}
+switch (zawod[losowoZawod[0]]){
+	case 'Antykwariusz':
+	document.getElementById("Um1").innerHTML="Gadanina: " + losowoZawod[0];
+	document.getElementById("Um2").innerHTML="Język Obcy: " + losowoZawod[0];
+	document.getElementById("Um3").innerHTML="Korzystanie z bibliotek: " + losowoZawod[0];
+	document.getElementById("Um4").innerHTML="Historia: " + losowoZawod[0];
+	document.getElementById("Um5").innerHTML="Spostrzegawczość: " + losowoZawod[0];
+	document.getElementById("Um6").innerHTML="Sztuka/Rzemiosło: " + losowoZawod[0];
+	document.getElementById("Um7").innerHTML="Wycena: " + losowoZawod[0];
+	document.getElementById("Um8").innerHTML=": " + losowoZawod[0];
+	document.getElementById("Um9").innerHTML=": " + losowoZawod[0];
+	document.getElementById("Um10").innerHTML=": " + losowoZawod[0];
+	document.getElementById("Um11").innerHTML=": " + losowoZawod[0];
+	document.getElementById("Um12").innerHTML=": " + losowoZawod[0];
+	document.getElementById("MAJ").innerHTML="Majętność: " + losowoZawod[0];
+	break;
+}
 
 
 var losowo2 = [];
