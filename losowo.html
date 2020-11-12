@@ -9,13 +9,13 @@
 <div>
 <h3>Dane badacza</h3>
 <ul>
-	<li>Imię</li>
-	<li>Nazwisko</li>
-	<li>Wiek</li>
-	<li>Płeć</li>
+	<li id="Imie"></li>
+	<li id="Nazwisko"></li>
+	<li id="Wiek"></li>
+	<li id="Plec"></li>
 	<li id="zawod"></li>
-	<li>Miejsce urodzenia</li>
-	<li>Miejsce zamieszkania</li>
+	<li>Miejsce urodzenia: Polska</li>
+	<li>Miejsce zamieszkania: Polska</li>
 </ul>
 </div>
 
@@ -62,9 +62,9 @@
 <div>
 <h3>Uzbrojenie i ekwipunek</h3>
 <ul>Broń
-	<li></li>
+	<li>Nieuzbrojony</li>
 </ul>
-<ul>
+<ul>Ekwipunek
 	<li>Poziom wydatków</li>
 	<li>Gotówka</li>
 	<li>Dobytek</li>
@@ -186,6 +186,16 @@ document.getElementById("op1").innerHTML=opis[losowoOp[0]];
 document.getElementById("op2").innerHTML=opis[losowoOp[1]];
 document.getElementById("op3").innerHTML=opis[losowoOp[2]];
 
+var losowoWiek = [];
+var losWiek = Math.floor(Math.random() * 40 + 18);
+if (losowoWiek.indexOf(losWiek) === -1) losowoWiek.push(losWiek); 
+document.getElementById("Wiek").innerHTML="Wiek: " + losowoWiek[0];
+
+var losowoPlec = [];
+var losPlec = Math.floor(Math.random() * 2);
+if (losowoPlec.indexOf(losPlec) === -1) losowoPlec.push(losPlec); 
+var plec = [ "Mężczyzna", "Kobieta" ];
+document.getElementById("Plec").innerHTML="Płeć: " + plec[losowoPlec[0]];
 
 var losowoZawod = [];
 var losZawod = Math.floor(Math.random() * 27);
@@ -219,7 +229,7 @@ switch (zawod[losowoZawod[0]]){
 
 
 var losowo2 = [];
-while(losowo2.length < 6){
+while(losowo2.length < 8){
     var los2 = Math.floor(Math.random() * 10);
     if(losowo2.indexOf(los2) === -1) losowo2.push(los2);
 }
@@ -230,15 +240,27 @@ var osoby = [ "Rodzic, który ", "Dziadkowie, którzy ", "Rodzeństwo, które ",
 var powody = [ "sprawił że mawz dług u niego", " nauczył cię czegoś ważnego", " nadał znaczenie twojemu życiu", "skrzywdziłeś i chcesz zadośćuczynić", "macie wspólne doświadczenia", "chcesz udowodnić swoją wartość", "ubóstwiasz", "przez niego dręczy cię poczucie żalu", "chcesz udowodnić, że jesteś lepszy", "cię zdradziła i chcesz się zemścić"];
 document.getElementById("oso").innerHTML=osoby[losowo2[1]] +" "+ powody[losowo2[2]] ;
 
-var miejsca = [ "Miejsce, gdzie pobierałeś nauki", "Twoje miejsce pochodzenia", "Miejsce, gdzie spotykaliście się z twoją miłością", "Meijsce twojej cichej kontmplacji", "Miejsce, gdzie udzielasz się towarzysko", "Miejsce związane z twoją wiarą/ideologią", "Grób ważnej dla ciebie osoby", "Twój dom rodzinny", "Miejsce, gdzie przeżyłeś najszczęśliwsze chwile w towim życiu", "Twoje miejsce pracy"]
+var miejsca = [ "Miejsce, gdzie pobierałeś nauki", "Twoje miejsce pochodzenia", "Miejsce, gdzie spotykaliście się z twoją miłością", "Meijsce twojej cichej kontmplacji", "Miejsce, gdzie udzielasz się towarzysko", "Miejsce związane z twoją wiarą/ideologią", "Grób ważnej dla ciebie osoby", "Twój dom rodzinny", "Miejsce, gdzie przeżyłeś najszczęśliwsze chwile w towim życiu", "Twoje miejsce pracy"];
 document.getElementById("miej").innerHTML=miejsca[losowo2[3]] ;
 
-var rzeczy = [ "Przedmiot związany z twoją specjalizacją (umiejętność o najwyższej wartości)", "Przedmiot ważny dla twojego zawodu", "Pamiątka z dzieciństwa", "Pamiątka po zmarłej osobie", "Coś od ważnej dla ciebie osoby", "Twoja kolekcja", "Coś co znalazłeś ale nie wiesz co to jest i próbujesz odszukać odpowiedź na pytanie co to jest", "Przedmiot związany ze sportem", "Broń", "Domowe zwierzątko"]
+var rzeczy = [ "Przedmiot związany z twoją specjalizacją (umiejętność o najwyższej wartości)", "Przedmiot ważny dla twojego zawodu", "Pamiątka z dzieciństwa", "Pamiątka po zmarłej osobie", "Coś od ważnej dla ciebie osoby", "Twoja kolekcja", "Coś co znalazłeś ale nie wiesz co to jest i próbujesz odszukać odpowiedź na pytanie co to jest", "Przedmiot związany ze sportem", "Broń", "Domowe zwierzątko"];
 document.getElementById("rzeczy").innerHTML=rzeczy[losowo2[4]] ;
 
-var przymioty = [ "Szczodry", "Dobrze radzi sobie ze zwirzętami", "Marzyciel", "Hedonista", "Hazardzista i ryzykant", "Dobry kucharz", "Bawidamek/Uwodzicielka", "Lojalny", "Dobra reputacja", "Ambitny"]
+var przymioty = [ "Szczodry", "Dobrze radzi sobie ze zwirzętami", "Marzyciel", "Hedonista", "Hazardzista i ryzykant", "Dobry kucharz", "Bawidamek/Uwodzicielka", "Lojalny", "Dobra reputacja", "Ambitny"];
 document.getElementById("cechy").innerHTML=przymioty[losowo2[5]] ;
 
+var imionaM = [ "Edward", "Marian", "Wacław", "Czesław", "Zygmunt", "Bronisław", "Eugeniusz", "Ludwik", "Feliks", "Leon" ];
+var imionaK = [ "Stefania", "Józefa", "Władysława", "Genowefa", "Aniela", "Franciszka", "Rozalia", "Wanda", "Regina", "Bronisława" ];
+var nazwiska = [ "Nowak", "Kowalski", "Wiśniewksi", "Dąbrowski", "Lewandowski", "Wójcik", "Kamiński", "Kowalczyk", "Zieliński", "Szymański" ];
+switch(plec[losowoPlec[0]]) {
+	case 'Mężczyzna':
+	document.getElementById("Imie").innerHTML="Imie: " + imionaM[losowo2[6]];
+	break;
+	case 'Kobieta':
+	document.getElementById("Imie").innerHTML="Imie: " + imionaK[losowo2[6]];
+	break;
+}
+document.getElementById("Nazwisko").innerHTML="Nazwisko: " + nazwiska[losowo2[7]];
 </script>
 
 </body>

@@ -5,95 +5,92 @@
 <body>
 
 <div class="standard">
-<h1>Lsowo</h1>
-Losowo tworzy wszystkie podstwowe 
 
 <div>
 <h3>Dane badacza</h3>
 <ul>
-	<li>Imię</li>
-	<li>Nazwisko</li>
-	<li>Wiek</li>
-	<li>Płeć</li>
-	<li>Zawód</li>
-	<li>Miejsce urodzenia</li>
-	<li>Miejsce zamieszkania</li>
+	<li id="Imie"></li>
+	<li id="Nazwisko"></li>
+	<li id="Wiek"></li>
+	<li id="Plec"></li>
+	<li id="zawod"></li>
+	<li>Miejsce urodzenia: Polska</li>
+	<li>Miejsce zamieszkania: Polska</li>
 </ul>
 </div>
 
 <div>
 <h3>Cechy</h3>
 <ul>
-	<li>Kondycja</li>
-	<li>Budowa ciała</li>
-	<li>Zręczność</li>
-	<li>Wygląd</li>
-	<li>Wykształcenie</li>
-	<li>Inteligencja</li>
-	<li>Moc</li>
-	<li>Ruch</li>
-	<li>Szczęście</li>
-	<li>Poczytalność</li>
-	<li>Punkty wytrzymałości</li>
-	<li>Punkty magii</li>
-	<li>Modyfikator obrażeń</li>
-	<li>Krzepa</li>
-	<li>Unik</li>
+	<li id="S"></li>
+	<li id="KON"></li>
+	<li id="BC"></li>
+	<li id="ZR"></li>
+	<li id="WYG"></li>
+	<li id="WYK"></li>
+	<li id="INT"></li>
+	<li id="MOC"></li>
+	<li id="Ruch"></li>
+	<li id="SZ"></li>
+	<li id="PW"></li>
+	<li id="PM"></li>
+	<li id="MO"></li>
+	<li id="KRZEPA"></li>
+	<li id="UNIK"></li>
 </ul>
 </div>
 
 <div>
 <h3>Umiejętności</h3>
 <ul>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
+	<li id="Um1"></li>
+	<li id="Um2"></li>
+	<li id="Um3"></li>
+	<li id="Um4"></li>
+	<li id="Um5"></li>
+	<li id="Um6"></li>
+	<li id="Um7"></li>
+	<li id="Um8"></li>
+	<li id="Um9"></li>
+	<li id="Um10"></li>
+	<li id="Um11"></li>
+	<li id="Um12"></li>
+	<li id="MAJ"></li>
 </ul>
 </div>
 
 <div>
 <h3>Uzbrojenie i ekwipunek</h3>
 <ul>Broń
-	<li></li>
+	<li>Nieuzbrojony</li>
 </ul>
-<ul>
+<ul>Ekwipunek
 	<li>Poziom wydatków</li>
 	<li>Gotówka</li>
 	<li>Dobytek</li>
 </ul>
 </div>
 
-
 <h3>Historia badacza</h3>
 <ul>Opis postaci
-	<li></li>
-	<li></li>
-	<li></li>
+	<li id="op1"></li>
+	<li id="op2"></li>
+	<li id="op3"></li>
 </ul>
 <ul>Ideologia/Przekonania
-	<li></li>
+	<li id="prze"></li>
 </ul>
 <ul>Ważne osoby
-	<li></li>
+	<li id="oso"></li>
 </ul>
 <ul>Znaczące miejsca
-	<li></li>
+	<li id="miej"></li>
 </ul>
 <ul>Rzeczy osobiste
-	<li></li>
+	<li id="rzeczy"></li>
 </ul>
 <ul>Cechy
-	<li></li>
+	<li id="cechy"></li>
 </ul>
 <ul>Urazy/Blizny
 	<li></li>
@@ -114,7 +111,157 @@ Losowo tworzy wszystkie podstwowe
 	<li></li>
 	<li></li>
 	<li></li>
+	<li></li>
+	<li></li>
 </ul>
 </div>
+
+<script type="text/javascript" >
+
+var losowoCechy1 = [];
+while (losowoCechy1.length < 6){
+	var losCechy1 = Math.floor(Math.random() * 15 + 3) * 5;
+	if (losowoCechy1.indexOf(losCechy1) === -1) losowoCechy1.push(losCechy1); 
+	
+}
+
+document.getElementById("S").innerHTML="Siła: " + losowoCechy1[0];
+document.getElementById("KON").innerHTML="Kondycja: " + losowoCechy1[1];
+document.getElementById("ZR").innerHTML="Zręczność: " + losowoCechy1[2];
+document.getElementById("WYG").innerHTML="Wygląd: " + losowoCechy1[3];
+document.getElementById("MOC").innerHTML="Moc: " + losowoCechy1[4];
+document.getElementById("SZ").innerHTML="Szczęście: " + losowoCechy1[5];
+document.getElementById("PM").innerHTML="Punkty magii: " + losowoCechy1[4]/5;
+
+document.getElementById("UNIK").innerHTML="Unik: " + Math.floor(losowoCechy1[2]/2);
+
+var losowoCechy2 = [];
+while (losowoCechy2.length < 3){
+	var losCechy2 = Math.floor(Math.random() * 10 + 8) * 5;
+	if (losowoCechy2.indexOf(losCechy2) === -1) losowoCechy2.push(losCechy2); 
+
+}
+document.getElementById("BC").innerHTML="Budowa Ciała: " + losowoCechy2[0];
+document.getElementById("INT").innerHTML="Inteligencja: " + losowoCechy2[1];
+document.getElementById("WYK").innerHTML="Wykształcenie: " + losowoCechy2[2];
+
+PW = losowoCechy1[1] + losowoCechy2[0] ;
+document.getElementById("PW").innerHTML="Punkty wytrzymałości: " + Math.floor(PW/10);
+
+
+if (losowoCechy1[0]<losowoCechy2[0] && losowoCechy1[2]<losowoCechy2[0]) {
+	document.getElementById("Ruch").innerHTML="Ruch: 7";
+}else if (losowoCechy1[0]>losowoCechy2[0] && losowoCechy1[2]>losowoCechy2[0]) {
+	document.getElementById("Ruch").innerHTML="Ruch: 9";
+}else {
+	document.getElementById("Ruch").innerHTML="Ruch: 8";
+}
+
+if (losowoCechy1[0]+losowoCechy2[0]<64) {
+	document.getElementById("MO").innerHTML="Modyfikator obrażeń: -2";
+	document.getElementById("KRZEPA").innerHTML="Krzepa: -2";
+}else if (losowoCechy1[0]+losowoCechy2[0]<84) {
+	document.getElementById("MO").innerHTML="Modyfikator obrażeń: -1";
+	document.getElementById("KRZEPA").innerHTML="Krzepa: -1";
+}else if (losowoCechy1[0]+losowoCechy2[0]<124) {
+	document.getElementById("MO").innerHTML="Modyfikator obrażeń: 0";
+	document.getElementById("KRZEPA").innerHTML="Krzepa: 0";
+}else if (losowoCechy1[0]+losowoCechy2[0]<164) {
+	document.getElementById("MO").innerHTML="Modyfikator obrażeń: +1k4";
+	document.getElementById("KRZEPA").innerHTML="Krzepa: 1";
+}else {
+	document.getElementById("MO").innerHTML="Modyfikator obrażeń: +1k6";
+	document.getElementById("KRZEPA").innerHTML="Krzepa: 2";
+}
+
+
+
+var losowoOp = [];
+while(losowoOp.length < 3){
+    var losOp = Math.floor(Math.random() * 36);
+    if(losowoOp.indexOf(losOp) === -1) losowoOp.push(losOp);
+}
+var opis = [ "Wyrazisty", "Przystojny", "Niezgrabny", "Śliczny", "Czarujący", "O dziecinnej twarzy", "Bystry", "Zaniedbany", "Nijaki", "Brudny", "Olśniewający", "Mól książkowy", "Młodziutki", "Znużony", "Pulchny", "Tęgi", "Owłosiony", "Szczupły", "Elegancki", "Niechlujny", "Krępy", "Rumiany", "Opalony", "Blady", "Posępny", "Przeciętny", "Pomarszczony", "Wyniosły", "Nieśmiały", "Ostre rysy", "Krzepki", "Filigranowy", "Muskularny", "Postawny", "Niezdarny", "Słabowity"];
+document.getElementById("op1").innerHTML=opis[losowoOp[0]];
+document.getElementById("op2").innerHTML=opis[losowoOp[1]];
+document.getElementById("op3").innerHTML=opis[losowoOp[2]];
+
+var losowoWiek = [];
+var losWiek = Math.floor(Math.random() * 40 + 18);
+if (losowoWiek.indexOf(losWiek) === -1) losowoWiek.push(losWiek); 
+document.getElementById("Wiek").innerHTML="Wiek: " + losowoWiek[0];
+
+var losowoPlec = [];
+var losPlec = Math.floor(Math.random() * 2);
+if (losowoPlec.indexOf(losPlec) === -1) losowoPlec.push(losPlec); 
+var plec = [ "Mężczyzna", "Kobieta" ];
+document.getElementById("Plec").innerHTML="Płeć: " + plec[losowoPlec[0]];
+
+var losowoZawod = [];
+var losZawod = Math.floor(Math.random() * 27);
+if (losowoZawod.indexOf(losZawod) === -1) losowoZawod.push(losZawod); 
+	
+var zawod = [ "Antykwariusz", "Artysta", "Artysta estradowy", "Atleta", "Bibliotekarz", "Bogaty hobbysta", "Człowiek plemienny", "Detektyw policyjny", "Duchowny", "Dziennikarz", "Fanatyk", "Farmer", "Inżynier", "Lekarz", "Misjonarz", "Muzyk", "Oficer policji", "Oficer wojskowy", "Parapsycholog", "Pilot", "Pisarz", "Prawnik", "Profesor", "Prywatny detektyw", "Przestępca", "Włóczęga", "Żołnierz" ]
+document.getElementById("zawod").innerHTML="Zawód: " + zawod[losowoZawod[0]];
+punkty = losowoCechy2[2] * 4;
+var losowoPunkty = [];
+while(losowoOp.length < 12){
+    var losOp = Math.floor(Math.random() * 70);
+    if(losowoOp.indexOf(losOp) === -1) losowoOp.push(losOp);
+}
+switch (zawod[losowoZawod[0]]){
+	case 'Antykwariusz':
+	document.getElementById("Um1").innerHTML="Gadanina: " + losowoZawod[0];
+	document.getElementById("Um2").innerHTML="Język Obcy: " + losowoZawod[0];
+	document.getElementById("Um3").innerHTML="Korzystanie z bibliotek: " + losowoZawod[0];
+	document.getElementById("Um4").innerHTML="Historia: " + losowoZawod[0];
+	document.getElementById("Um5").innerHTML="Spostrzegawczość: " + losowoZawod[0];
+	document.getElementById("Um6").innerHTML="Sztuka/Rzemiosło: " + losowoZawod[0];
+	document.getElementById("Um7").innerHTML="Wycena: " + losowoZawod[0];
+	document.getElementById("Um8").innerHTML=": " + losowoZawod[0];
+	document.getElementById("Um9").innerHTML=": " + losowoZawod[0];
+	document.getElementById("Um10").innerHTML=": " + losowoZawod[0];
+	document.getElementById("Um11").innerHTML=": " + losowoZawod[0];
+	document.getElementById("Um12").innerHTML=": " + losowoZawod[0];
+	document.getElementById("MAJ").innerHTML="Majętność: " + losowoZawod[0];
+	break;
+}
+
+
+var losowo2 = [];
+while(losowo2.length < 8){
+    var los2 = Math.floor(Math.random() * 10);
+    if(losowo2.indexOf(los2) === -1) losowo2.push(los2);
+}
+var przekon = [ "Wierzy w siły wyższe", "Nie wierzy w żadne religie", "Jest naukowcem i tylko nauka może nas zbawić", "Wierzy w przeznaczenie", "Jest członkiem tajnej organizacji", "Chce wykorzenić ze społeczeństwa zło", "Okultysta", "Jest bardzo zaangarzowany politycznie", "Wierzy że tylko pieniądze mogą coś zdiałać", "Działacz lub aktywista"];
+document.getElementById("prze").innerHTML=przekon[losowo2[0]];
+
+var osoby = [ "Rodzic, który ", "Dziadkowie, którzy ", "Rodzeństwo, które ", "Dziecko, które ", "Partner, który ", "Nauczyciel/Mentor, który ", "Przyjaciel z dzieciństwa, który ", "Sławna osoba, która ", "Inny badacz, który ", "Bohater niezależny, który "];
+var powody = [ "sprawił że mawz dług u niego", " nauczył cię czegoś ważnego", " nadał znaczenie twojemu życiu", "skrzywdziłeś i chcesz zadośćuczynić", "macie wspólne doświadczenia", "chcesz udowodnić swoją wartość", "ubóstwiasz", "przez niego dręczy cię poczucie żalu", "chcesz udowodnić, że jesteś lepszy", "cię zdradziła i chcesz się zemścić"];
+document.getElementById("oso").innerHTML=osoby[losowo2[1]] +" "+ powody[losowo2[2]] ;
+
+var miejsca = [ "Miejsce, gdzie pobierałeś nauki", "Twoje miejsce pochodzenia", "Miejsce, gdzie spotykaliście się z twoją miłością", "Meijsce twojej cichej kontmplacji", "Miejsce, gdzie udzielasz się towarzysko", "Miejsce związane z twoją wiarą/ideologią", "Grób ważnej dla ciebie osoby", "Twój dom rodzinny", "Miejsce, gdzie przeżyłeś najszczęśliwsze chwile w towim życiu", "Twoje miejsce pracy"];
+document.getElementById("miej").innerHTML=miejsca[losowo2[3]] ;
+
+var rzeczy = [ "Przedmiot związany z twoją specjalizacją (umiejętność o najwyższej wartości)", "Przedmiot ważny dla twojego zawodu", "Pamiątka z dzieciństwa", "Pamiątka po zmarłej osobie", "Coś od ważnej dla ciebie osoby", "Twoja kolekcja", "Coś co znalazłeś ale nie wiesz co to jest i próbujesz odszukać odpowiedź na pytanie co to jest", "Przedmiot związany ze sportem", "Broń", "Domowe zwierzątko"];
+document.getElementById("rzeczy").innerHTML=rzeczy[losowo2[4]] ;
+
+var przymioty = [ "Szczodry", "Dobrze radzi sobie ze zwirzętami", "Marzyciel", "Hedonista", "Hazardzista i ryzykant", "Dobry kucharz", "Bawidamek/Uwodzicielka", "Lojalny", "Dobra reputacja", "Ambitny"];
+document.getElementById("cechy").innerHTML=przymioty[losowo2[5]] ;
+
+var imionaM = [ "Edward", "Marian", "Wacław", "Czesław", "Zygmunt", "Bronisław", "Eugeniusz", "Ludwik", "Feliks", "Leon" ];
+var imionaK = [ "Stefania", "Józefa", "Władysława", "Genowefa", "Aniela", "Franciszka", "Rozalia", "Wanda", "Regina", "Bronisława" ];
+var nazwiska = [ "Nowak", "Kowalski", "Wiśniewksi", "Dąbrowski", "Lewandowski", "Wójcik", "Kamiński", "Kowalczyk", "Zieliński", "Szymański" ];
+switch(plec[losowoPlec[0]]) {
+	case 'Mężczyzna':
+	document.getElementById("Imie").innerHTML="Imie: " + imionaM[losowo2[6]];
+	break;
+	case 'Kobieta':
+	document.getElementById("Imie").innerHTML="Imie: " + imionaK[losowo2[6]];
+	break;
+}
+document.getElementById("Nazwisko").innerHTML="Nazwisko: " + nazwiska[losowo2[7]];
+</script>
+
 </body>
 </html>
